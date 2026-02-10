@@ -3,23 +3,156 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LocalEats Dashboard</title>
-  <link rel="stylesheet" href="/styles.css" />
+  <title>LocalEats - Comenzi din Restaurante Locale</title>
+  <link rel="stylesheet" href="/tailwind.css" />
 </head>
-<body>
-  <header>
-    <h1>LocalEats Dashboard</h1>
+<body class="bg-white text-gray-900">
+  <!-- Navigation Header -->
+  <header class="sticky top-0 z-50 bg-white shadow-md">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+      <div class="flex items-center">
+        <h1 class="text-2xl font-bold text-orange-600">LocalEats</h1>
+      </div>
+      <ul class="hidden md:flex space-x-8">
+        <li><a href="#features" class="text-gray-700 hover:text-orange-600 transition">Caracteristici</a></li>
+        <li><a href="#about" class="text-gray-700 hover:text-orange-600 transition">Despre</a></li>
+        <li><a href="#contact" class="text-gray-700 hover:text-orange-600 transition">Contact</a></li>
+      </ul>
+    </nav>
   </header>
-  <main>
-    <p>Bine ai venit la dashboard-ul LocalEats! Aici vei putea gestiona comenzile, restaurantele și clienții.</p>
-    <ul>
-      <li><a href="/dashboard/orders">Comenzi</a></li>
-      <li><a href="/dashboard/restaurants">Restaurante</a></li>
-      <li><a href="/dashboard/customers">Clienți</a></li>
-    </ul>
-  </main>
-  <footer>
-    <p>&copy; 2024 LocalEats. Toate drepturile rezervate.</p>
+
+  <!-- Hero Section -->
+  <section class="min-h-screen bg-gradient-to-br from-orange-50 via-white to-orange-50 flex items-center justify-center px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+        Comandă din Restaurantele Tale Locale Preferate
+      </h2>
+      <p class="text-lg sm:text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+        Descoperă, explorează și comandă din cele mai bune restaurante din zona ta. Livrare rapidă și sigură direct la ușa ta.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/dashboard/orders" class="px-8 py-4 bg-orange-600 text-white text-lg font-semibold rounded-lg hover:bg-orange-700 transition shadow-lg">
+          Vizualizează Comenzile
+        </a>
+        <a href="/dashboard/restaurants" class="px-8 py-4 bg-white text-orange-600 text-lg font-semibold rounded-lg border-2 border-orange-600 hover:bg-orange-50 transition">
+          Explorează Restaurante
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="py-16 sm:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h3 class="text-3xl sm:text-4xl font-bold text-center text-gray-900 mb-12">
+        De ce să alegi LocalEats?
+      </h3>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Feature 1 -->
+        <div class="bg-gradient-to-br from-orange-50 to-white p-8 rounded-xl shadow-md hover:shadow-lg transition border border-orange-100">
+          <div class="w-12 h-12 bg-orange-600 rounded-lg flex items-center justify-center mb-4">
+            <span class="text-white text-2xl">🍽️</span>
+          </div>
+          <h4 class="text-xl font-bold text-gray-900 mb-2">Restaurante Diverse</h4>
+          <p class="text-gray-600">Mii de restaurante locale la alegerea ta, de la pizza la sushi și pn la mâncare tradițională.</p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="bg-gradient-to-br from-orange-50 to-white p-8 rounded-xl shadow-md hover:shadow-lg transition border border-orange-100">
+          <div class="w-12 h-12 bg-orange-600 rounded-lg flex items-center justify-center mb-4">
+            <span class="text-white text-2xl">⚡</span>
+          </div>
+          <h4 class="text-xl font-bold text-gray-900 mb-2">Livrare Rapidă</h4>
+          <p class="text-gray-600">Comenzile tale vor ajunge la ușa în timp record, fierbinți și proaspete.</p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="bg-gradient-to-br from-orange-50 to-white p-8 rounded-xl shadow-md hover:shadow-lg transition border border-orange-100">
+          <div class="w-12 h-12 bg-orange-600 rounded-lg flex items-center justify-center mb-4">
+            <span class="text-white text-2xl">🔒</span>
+          </div>
+          <h4 class="text-xl font-bold text-gray-900 mb-2">Sigur și Fiabil</h4>
+          <p class="text-gray-600">Plăți securizate, tracking în timp real și suport clienți disponibil 24/7.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dashboard Links Section -->
+  <section class="py-16 sm:py-24 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h3 class="text-3xl sm:text-4xl font-bold text-center text-gray-900 mb-12">
+        Gestionează-ți Activitatea
+      </h3>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Orders Card -->
+        <a href="/dashboard/orders" class="group bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition transform hover:scale-105">
+          <div class="text-5xl mb-4">📦</div>
+          <h4 class="text-2xl font-bold text-gray-900 mb-3 group-hover:text-orange-600 transition">Comenzi</h4>
+          <p class="text-gray-600 mb-4">Monitorizează și gestionează toate comenzile tale în timp real.</p>
+          <span class="inline-block text-orange-600 font-semibold group-hover:translate-x-2 transition">Accesează →</span>
+        </a>
+
+        <!-- Restaurants Card -->
+        <a href="/dashboard/restaurants" class="group bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition transform hover:scale-105">
+          <div class="text-5xl mb-4">🏪</div>
+          <h4 class="text-2xl font-bold text-gray-900 mb-3 group-hover:text-orange-600 transition">Restaurante</h4>
+          <p class="text-gray-600 mb-4">Explorează și ușor să gestionezi partenerii restaurante.</p>
+          <span class="inline-block text-orange-600 font-semibold group-hover:translate-x-2 transition">Accesează →</span>
+        </a>
+
+        <!-- Customers Card -->
+        <a href="/dashboard/customers" class="group bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition transform hover:scale-105">
+          <div class="text-5xl mb-4">👥</div>
+          <h4 class="text-2xl font-bold text-gray-900 mb-3 group-hover:text-orange-600 transition">Clienți</h4>
+          <p class="text-gray-600 mb-4">Gestionează și analizează baza ta de clienți cu ușurință.</p>
+          <span class="inline-block text-orange-600 font-semibold group-hover:translate-x-2 transition">Accesează →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section id="contact" class="py-16 sm:py-24 bg-gradient-to-r from-orange-600 to-orange-700">
+    <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+      <h3 class="text-3xl sm:text-4xl font-bold text-white mb-6">
+        Gata să Începi?
+      </h3>
+      <p class="text-lg text-orange-100 mb-8">
+        Alătură-te miilor de utilizatori care deja folosesc LocalEats pentru a comanda din restaurantele lor preferate.
+      </p>
+      <a href="/dashboard/orders" class="inline-block px-8 py-4 bg-white text-orange-600 text-lg font-semibold rounded-lg hover:bg-orange-50 transition shadow-lg">
+        Accesează Dashboard
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-300 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+        <div>
+          <h5 class="text-xl font-bold text-white mb-4">LocalEats</h5>
+          <p class="text-sm">Platforma de comenzi din restaurante locale cu livrare rapidă și sigură.</p>
+        </div>
+        <div>
+          <h5 class="text-lg font-semibold text-white mb-4">Linkuri Rapide</h5>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#features" class="hover:text-white transition">Caracteristici</a></li>
+            <li><a href="/dashboard/restaurants" class="hover:text-white transition">Restaurante</a></li>
+            <li><a href="/dashboard/orders" class="hover:text-white transition">Comenzi</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5 class="text-lg font-semibold text-white mb-4">Contact</h5>
+          <p class="text-sm">📧 contact@localeats.ro</p>
+          <p class="text-sm">📱 +40 (123) 456-7890</p>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 pt-8 text-center text-sm">
+        <p>&copy; 2024 LocalEats. Toate drepturile rezervate.</p>
+      </div>
+    </div>
   </footer>
 </body>
 </html>
