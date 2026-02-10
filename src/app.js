@@ -1,10 +1,18 @@
 const express = require("express");
+const session = require("express-session");
 
 const dashboardRouter = require("../routes/dashboard");
 
 const app = express();
 
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(session({
+  secret: 'your-secret-key',
+  resave: false,
+  saveUninitialized: true,
+  cookie: { secure: false }
+}));
 app.use(express.static("public"));
 app.set('view engine', 'ejs');
 
