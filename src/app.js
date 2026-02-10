@@ -1,5 +1,6 @@
 const express = require("express");
 const session = require("express-session");
+const connectDB = require('../config/database');
 
 const dashboardRouter = require("../routes/dashboard");
 
@@ -15,6 +16,8 @@ app.use(session({
 }));
 app.use(express.static("public"));
 app.set('view engine', 'ejs');
+
+connectDB();
 
 app.use('/dashboard', dashboardRouter);
 
