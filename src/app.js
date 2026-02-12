@@ -17,48 +17,7 @@ app.use(session({
 app.use(express.static("public"));
 app.set('view engine', 'ejs');
 
-//connectDB();
-const {
-  addRestaurant,
-  deleteAllRestaurants,
-  getAllRestaurants,
-} = require("../services/restaurant.service");
-
-const runTest = async () => {
-  await connectDB();
-
-  // date de test
-  const testRestaurant = {
-    name: "Pizza Sergio",
-    phone: "0712345678",
-    address: "Strada Principala 10",
-    city: "Cluj-Napoca",
-    workingDays: [
-      { day: "Luni", openTime: "10:00", closeTime: "22:00" },
-      { day: "Marti", openTime: "10:00", closeTime: "22:00" },
-    ],
-    menu: [
-      {
-        name: "Pizza",
-        products: [
-          {
-            name: "Margherita",
-            price: 25,
-            description: "Sos de rosii, mozzarella",
-          },
-        ],
-      },
-    ],
-  };
-
-  await deleteAllRestaurants();
-  await addRestaurant(testRestaurant);
-  await getAllRestaurants();
-
-  process.exit(0);
-};
-
-runTest();
+connectDB();
 
 app.use('/dashboard', dashboardRouter);
 
